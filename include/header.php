@@ -84,6 +84,11 @@
                       <li><a href="../relatorios/listaFuncionario.php">Funcionários</a></li>
                     </ul>
                   </li>
+                  <li><a><i class="fa fa-desktop"></i> Titulos <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="titulos/pagar.php">Titulos a pagar</a></li>
+                    </ul>
+                  </li>
                 </ul>
               </div>
             </div>

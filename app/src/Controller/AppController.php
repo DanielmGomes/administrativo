@@ -48,8 +48,8 @@ class AppController extends Controller
         $this->loadComponent('Auth', [
             'authorize' => ['Controller'],
             'loginRedirect' => [
-                'controller' => 'Users',
-                'action' => 'index'
+                'controller' => 'Pages',
+                'action' => 'display'
             ],
             'logoutRedirect' => [
                 'controller' => 'Pages',
@@ -68,7 +68,7 @@ class AppController extends Controller
     
     public function beforeFilter(Event $event)
     {
-        //caso queira deixar alguma pagina sem necessidade de login -> $this->Auth->allow(['index', 'view', 'display']);
+       /* caso queira deixar alguma pagina sem necessidade de login -> $this->Auth->allow(['index', 'view', 'display']); */
         $this->set('username', $this->Auth->user('username'));
     }
 

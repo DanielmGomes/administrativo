@@ -36,7 +36,7 @@ class UsersController extends AppController
                 $this->Auth->setUser($user);
                 return $this->redirect($this->Auth->redirectUrl());
             }
-            $this->Flash->error(__('Usuário ou senha ínvalido, tente novamente'));
+            $this->Flash->error(__('Invalid user or password'));
         }
     }
 
@@ -83,11 +83,11 @@ class UsersController extends AppController
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
             if ($this->Users->save($user)) {
-                $this->Flash->success(__('Usuario salvo com sucesso.'));
+                $this->Flash->success(__('User saved successfully.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('Não foi possivel adicionar usuario.'));
+            $this->Flash->error(__('Could not add user.'));
         }
         $this->set('user', $user);
     }

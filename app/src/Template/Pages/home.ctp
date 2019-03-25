@@ -81,8 +81,8 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 
             <!-- menu profile quick info -->
             <div class="profile clearfix">
-              <div class="profile_pic img-circle profile_img">
-                <?= $this->Html->image("user.svg") ?>
+              <div class="profile_pic">
+                <?= $this->Html->image("user.svg", ['class' => 'img-circle profile_img']) ?>
               </div>
               <div class="profile_info">
                 <span>Bem-Vindo,</span>
@@ -100,7 +100,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-file-text"></i> Cadastros <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="cadastros/fornecedores.php">Fornecedores</a></li>
+                      <li><a><?php echo $this->Html->link('Fornecedores', ['controller' => 'providers', 'action' => 'add']) ?></a></li>
                       <li><a href="cadastros/funcionarios.php">Funcionarios</a></li>
                     </ul>
                   </li>
@@ -157,7 +157,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                       </a>
                     </li>
                     <li><a href="javascript:;">Help</a></li>
-                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                    <li><?php echo $this->Html->link('logout', ['controller' => 'users', 'action' => 'logout']) ?></li>
                   </ul>
                 </li>
 
@@ -230,8 +230,6 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
           </div>
         </div>
         <!-- /top navigation -->
-
-
 <!-- page content -->
 <div class="right_col" role="main">
     <!-- top tiles -->

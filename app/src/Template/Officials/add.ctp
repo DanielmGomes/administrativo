@@ -218,8 +218,6 @@
         </div>
         <!-- /top navigation -->
 
-
-
 <!-- page content -->
 <div class="right_col" role="main">
   <div class="">
@@ -243,128 +241,69 @@
             </ol>
           </div>
           <div class="x-content">
-              <div class="providers form large-9 medium-8 columns content">
-                <?= $this->Form->create($provider) ?>
+            <div class="officials form large-9 medium-8 columns content">
+                <?= $this->Form->create($official) ?>
                 <fieldset>
-                    <legend><?= __('Add Provider') ?></legend>
+                    <legend><?= __('Add Official') ?></legend>
                     <?php
-                        echo '<div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">';
-                            echo $this->Form->control('company', ['label' => 'Razão Social',  'type' => 'text', 'class' => 'form-control', 'maxlength' => '60', 'required' => 'true']);
-                        echo '</div>';
-            
-                        echo '<div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">';
-                            echo $this->Form->control('trade', ['label' => 'Fantasia', 'class' => 'form-control', 'maxlength' => '60', 'required' => 'true']);
-                         echo '</div>';
-
-                        echo '<div class="col-md-5 col-sm-6 col-xs-12 form-group has-feedback">';
-                            echo $this->Form->control('adress', ['label' => 'Endereço',  'type' => 'text', 'class' => 'form-control', 'maxlength' => '60', 'required' => 'true']);
-                        echo '</div>';
-
-                        echo '<div class="col-md-2 col-sm-6 col-xs-12 form-group has-feedback">';
-                            echo $this->Form->control('neighborhood', ['label' => 'Número',  'type' => 'text', 'class' => 'form-control', 'maxlength' => '60', 'required' => 'true']);  
-                        echo '</div>';
-                        
-                        echo '<div class="col-md-5 col-sm-6 col-xs-12 form-group has-feedback">';
-                            echo $this->Form->control('city', ['label' => 'Bairro',  'type' => 'text', 'class' => 'form-control', 'maxlength' => '60', 'required' => 'true']);
-                        echo '</div>';
-
-                        echo '<div class="col-md-4 col-sm-6 col-xs-12 form-group has-feedback">';
-                            echo '<label>Estado</label>';
-                            echo $this->Form->select(
-                                'state',
-                                [
-                                   'acre' => 'Acre',
-                                    'alagoas' => 'Alagoas',
-                                    'amazonas' => 'Amazonas',
-                                    'bahia' => 'Bahia',
-                                    'ceara' => 'Ceará',
-                                    'distrito federal' => 'Distrito Federal',
-                                    'espirito santo' => 'Espirito Santo',
-                                    'goias' => 'Goías',
-                                    'maranhao' => 'Maranhão',
-                                    'mato grosso' => 'Mato Grosso',
-                                    'mato grosso do sul' => 'Mato Grosso do Sul',
-                                    'minas gerais' => 'Minas Gerais',
-                                    'para' => 'Para',
-                                    'paraiba' => 'Paraiba',
-                                    'parana' => 'Parana',
-                                    'pernambuco' => 'Pernambuco',
-                                    'piaui' => 'Piaui',
-                                    'rio de janeiro' => 'Rio de Janeiro',
-                                    'rio grande do norte' => 'Rio Grande do Norte',
-                                    'rio grande do sul' => 'Rio Grande do Sul',
-                                    'rondonia' => 'Rondonia',
-                                    'santa catarina' => 'Santa Catarina',
-                                    'sao paulo' => 'Sao Paulo',
-                                    'sergipe' => 'Sergipe',
-                                    'tocantins' => 'Tocantins'
-                                ],
-                                ['empty' => '---', 'class' => 'form-control', 'required' => 'true', 'onchange '=> 'carregaConteudo(this);']
-                            );
-                        echo '</div>';
-                        
-                        echo '<div class="col-md-4 col-sm-6 col-xs-12 form-group has-feedback">';
-                            echo '<label>Cidade</label>';
-                            echo $this->Form->select('city',[], ['id' => 'cidade', 'class' => 'form-control', 'required' => 'true']);
-                  
-                            echo '<div id="conteudo">';
-                                                                
-
-                            echo '</div>';      
-                        echo '</div>';
-
-                        echo '<div class="col-md-4 col-sm-6 col-xs-12 form-group has-feedback">';
-                            echo $this->Form->control('cep', ['label' => 'CEP', 'type' => 'text', 'id' => 'cep', 'maxlength' => '9', 'class' => 'cep form-control']);
-                        echo '</div>';
-
-                        echo '<div class="col-md-3 col-sm-6 col-xs-12 form-group has-feedback">';
-                            echo $this->Form->control('phone', ['label' => 'Telefone', 'type' => 'text', 'class' => 'telefone form-control', 
-                                'id' => 'telefone', 'required' => 'true']);
-                        echo '</div>';
-
-                        echo '<div class="col-md-3 col-sm-6 col-xs-12 form-group has-feedback">';
-                            echo $this->Form->control('cellPhone', ['label' => 'Celular', 'type' => 'text', 'class' => 'celular form-control', 
-                                'id' => 'celular']);
-                        echo '</div>';
-
-                        echo '<div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">';
-                            echo $this->Form->control('email', ['label' => 'E-mail', 'type' => 'email', 'class' => 'form-control', 'maxlength' => '60']);
-                        echo '</div>';                        
-
-                        echo '<div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">';
-                            echo $this->Form->control('cnpj', ['label' => 'CNPJ', 'type' => 'text', 'class' => 'cnpj form-control', 
-                                'id' => 'cnpj', 'required' => 'true']);
-                         echo '</div>';
-                           
-                         echo '<div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">';
-                            echo $this->Form->control('stateRegistration', ['label' => 'Inscrição Estadual', 'type' => 'text', 
-                                'class' => 'inscricaoEstadual form-control', 'id' => 'inscricaoEstadual']);
-                        echo '</div>';
-
-                         echo '<div class="col-md-12 col-sm-6 col-xs-12 form-group has-feedback">';
-                            echo $this->Form->control('contact', ['label' => 'Contato', 'type' => 'text', 'class' => 'form-control']);
-                        echo '</div>';
-                     
-                        /*echo $this->Form->control('user_id', ['options' => $users, 'empty' => true]);*/
+                        echo $this->Form->control('badge');
+                        echo $this->Form->control('name');
+                        echo $this->Form->control('pis');
+                        echo $this->Form->control('register');
+                        echo $this->Form->control('ctps');
+                        echo $this->Form->control('serie');
+                        echo $this->Form->control('admission');
+                        echo $this->Form->control('cpf');
+                        echo $this->Form->control('voter');
+                        echo $this->Form->control('reservist');
+                        echo $this->Form->control('maritalStatus');
+                        echo $this->Form->control('birth');
+                        echo $this->Form->control('sex');
+                        echo $this->Form->control('rg');
+                        echo $this->Form->control('emitter');
+                        echo $this->Form->control('cnh');
+                        echo $this->Form->control('homeExperience');
+                        echo $this->Form->control('endExperience');
+                        echo $this->Form->control('adress');
+                        echo $this->Form->control('neighborhood');
+                        echo $this->Form->control('city');
+                        echo $this->Form->control('state');
+                        echo $this->Form->control('cep');
+                        echo $this->Form->control('phone');
+                        echo $this->Form->control('cellPhone');
+                        echo $this->Form->control('email');
+                        echo $this->Form->control('scholling');
+                        echo $this->Form->control('salary');
+                        echo $this->Form->control('users_id', ['options' => $users]);
+                        echo $this->Form->control('companies_id', ['options' => $companies]);
+                        echo $this->Form->control('offices_id', ['options' => $offices]);
+                        echo $this->Form->control('departments_id', ['options' => $departments]);
+                        echo $this->Form->control('sectors_id', ['options' => $sectors]);
+                        echo $this->Form->control('centerCosts_id', ['options' => $centerCosts]);
                     ?>
                 </fieldset>
-                <div class="ln_solid"></div>
-                  <div class="form-group">
-                    <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
-                        <?= $this->Form->button(__('Submit'), ['class' => 'btn btn-success']) ?>
-                        <?= $this->Form->button(__('Reset'), ['class' => 'btn btn-danger', 'type' => 'reset']) ?>
-                        <?= $this->Form->end() ?>
-                    </div>
-                  </div>
-                </div>
-
+                <?= $this->Form->button(__('Submit')) ?>
+                <?= $this->Form->end() ?>
             </div>
-          </div>
-        </div>
-    </div>
-  </div>
-</div>     
-<!-- /page content -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

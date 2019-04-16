@@ -2,7 +2,7 @@ function carregaConteudo(obj){
 
 $.ajax({
   method: "GET",
-  url: "../config/cidades.php",
+  url: "../webroot/cidades.php",
   data: {uf: obj.value}
  }).done(function(conteudo){ 	
     $("#cidade").html(conteudo);

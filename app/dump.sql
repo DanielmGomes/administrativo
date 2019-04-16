@@ -25,6 +25,28 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estrutura tabela 'companies'
+--
+
+CREATE TABLE 'companies' (
+  'id' int(10) UNSIGNED NOT NULL,
+  'company' varchar()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura tabela 'officials'
+--
+
+CREATE TABLE 'officials' (
+  'id' int(10) UNSIGNED NOT NULL,
+
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+
 -- Estrutura da tabela `providers`
 --
 

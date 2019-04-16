@@ -106,8 +106,8 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                   </li>
                   <li><a><i class="fa fa-edit"></i> Relátorios <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="relatorios/listaFornecedor.php">Fornecedores</a></li>
-                      <li><a href="relatorios/listaFuncionario.php">Funcionários</a></li>
+                      <li><a><?php echo $this->Html->link('Fornecedores', ['controller' => 'providers', 'action' => 'index']) ?></a></li>
+                      <li><>aFuncionários</a></li>
                     </ul>
                   </li>
                 </ul>
